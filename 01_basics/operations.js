@@ -13,5 +13,5 @@ let negValue =-value;
 // let str2 = " Vedant";
 // let str3 = str1+str2;
 // console.log(str3);
-console.log("1" + 2+2);
-console.log("1" + (2+2));
+// console.log("1" + 2+2);
+// console.log("1" + (2+2));
