@@ -95,7 +95,7 @@ form.addEventListener('submit', (e) => {
 
 ```
 
-## project 4 (Guess The Number)
+## project 4 (Guess the number)
 
 ```JavaScript
     let random_number = parseInt(Math.random() * 100 + 1);
@@ -184,4 +184,61 @@ function newGame() {
     playGame = true;
   });
 }
+```
+## project 5 (Unlimited Colors)
+```JavaScript
+  const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+let intervalId;
+
+const startChaningColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+    function changeBgColor() {
+      document.body.style.backgroundColor = randomColor();
+    }
+  }
+};
+
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChaningColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+console.log(randomColor(randomColor()));
+```
+## project 6 (Keyboard)
+```Javascript
+const insert = document.querySelector('#insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class="color">
+  <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+    <th>Key pressed</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'space' : e.key}</td>
+    <td>${e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+</div>
+`;
+});
 ```
