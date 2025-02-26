@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Project</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+// Can written like this
+
+    // const sayVedant = function(){
+    //     console.log("Vedant");
+    // }
+    // setTimeout(sayVedant,2000);
+
+// Also can written like this
+
+    // setTimeout(()=>{
+    //     console.log("Vedant");
+    // },2000);
+
+    // Changing the h1 tag
+    // setTimeout(function(){
+    //     document.querySelector('h1').innerHTML = "Best JavaScript Series";
+    // },2000);
+
+    // also can write like this
+
+    const dosec =function(){
+        document.querySelector('h1').innerHTML = "Best Series"; 
+    } 
+
+    const Changeme = setTimeout(dosec,5000);
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(Changeme);
+    console.log("stoped"); 
+});
+</script>
+</html>
